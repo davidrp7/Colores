@@ -13,7 +13,7 @@ import android.widget.SeekBar;
 import android.widget.TextView;
 import android.widget.Toast;
 
-public class MainActivity extends AppCompatActivity {
+public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBarChangeListener {
 
     int seekR, seekG, seekB, seekA;
     SeekBar seekBarRed, seekBarGreen, seekBarBlue, seekBarAlpha;
@@ -43,7 +43,8 @@ public class MainActivity extends AppCompatActivity {
         int color = Color.argb(seekA, seekR, seekG, seekB);
         viewBackground.setBackgroundColor(color);
 
-        //AUMENTAR UN TEXTVIEW A CADA BARRA Y CADA VEZ QUE MUEVA LA BARRA CAMBIE EL NUMERO 
+        //AUMENTAR UN TEXTVIEW A CADA BARRA Y CADA VEZ QUE MUEVA LA BARRA CAMBIE EL NUMERO
+        // CUANDO SE DESPLIEGUE EL MENU QUE MUESTRE UNA PALETA DE COLORES Y AL DARLE CLICK CAMBIE LOS COLORES
     }
 
 
@@ -76,6 +77,21 @@ public class MainActivity extends AppCompatActivity {
 
         MenuInflater menuInflater = getMenuInflater();
         menuInflater.inflate(R.menu.menu_index, menu);
+    }
+
+    @Override
+    public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
+        updateBackground();
+    }
+
+    @Override
+    public void onStartTrackingTouch(SeekBar seekBar) {
+
+    }
+
+    @Override
+    public void onStopTrackingTouch(SeekBar seekBar) {
+
     }
 
     //************************************************************************
