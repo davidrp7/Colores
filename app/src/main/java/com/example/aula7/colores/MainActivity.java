@@ -31,6 +31,10 @@ public class MainActivity extends AppCompatActivity implements SeekBar.OnSeekBar
         viewBackground = (View) findViewById(R.id.id_v_backg);
 
         //registerForContextMenu(textViewName);
+        seekBarRed.setOnSeekBarChangeListener(this);
+        seekBarGreen.setOnSeekBarChangeListener(this);
+        seekBarBlue.setOnSeekBarChangeListener(this);
+        seekBarAlpha.setOnSeekBarChangeListener(this);
 
     }
 
